@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    int t,n,d,a,b=0,c,e,f,g,h,i,j;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>d;
+        if(d<=n)
+        {
+            cout<<"YES"<<endl;
+        }
+        else{
+            for(i=1;i<=n;i++)
+            {
+                if(d%(i+1)!=0)
+                {
+                    a=(d/(i+1))+1;
+                }
+                else{
+                    a=(d/(i+1));
+                }
+                c=a+i;
+                if(c<=n)
+                {
+                    b=1;
+                    break;
+                }
+            }
+            if(b==1)
+            {
+                cout<<"YES"<<endl;
+            }
+            else{
+                cout<<"NO"<<endl;
+            }
+        }
+        b=0;
+    }
+}

@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    int t,n,a[100000],i,j,b=0,c=0,d=0,e=0,f,g,h,sum=0,cum=0;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        for(i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        for(j=0;;j++)
+        {
+            if(c==n)
+            {
+                break;
+            }
+            else{
+                if(j%2==0)
+                {
+                    for(i=0;i<n;i++)
+                    {
+                        if(a[i]>0)
+                        {
+                            c++;
+                        }
+                        sum=sum+a[i];
+                        a[i]=0;
+                        if(sum>cum)
+                        {
+                            break;
+                        }
+                    }
+                    b=b+sum;
+                    cum=0;
+                    e++;
+                }
+                else{
+                    for(i=n-1;i>=0;i--)
+                    {
+                        if(a[i]>0)
+                        {
+                            c++;
+                        }
+                        cum=cum+a[i];
+                        a[i]=0;
+                        if(cum>sum)
+                        {
+                            break;
+                        }
+                    }
+                    d=d+cum;
+                    sum=0;
+                    e++;
+                }
+            }
+        }
+        cout<<e<<" "<<b<<" "<<d<<endl;
+        b=0;c=0;d=0;e=0;sum=0;cum=0;
+    }
+}

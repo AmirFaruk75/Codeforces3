@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    long long int a[100000],i,j,k,b=0,c,d,e,f,g,h,n,m[100000],sum=0,cum=0;
+    for(i=0;i<2;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+2);
+    if(a[0]>=5)
+    {
+        for(i=1;i<=5;i++)
+        {
+            for(j=1;j<=a[1];j++)
+            {
+                if((i+j)%5==0)
+                {
+                    b++;
+                }
+            }
+            m[i]=b;
+            sum=sum+m[i];
+            b=0;
+        }
+        c=a[0]/5;
+        d=a[0]%5;
+        e=c*sum;
+        for(i=1;i<=d;i++)
+        {
+            cum=cum+m[i];
+        }
+        cout<<e+cum;
+    }
+    else{
+        for(i=1;i<=a[0];i++)
+        {
+            for(j=1;j<=a[1];j++)
+            {
+                if((i+j)%5==0)
+                {
+                    b++;
+                }
+            }
+            m[i]=b;
+            sum=sum+m[i];
+            b=0;
+        }
+        cout<<sum;
+    }
+}

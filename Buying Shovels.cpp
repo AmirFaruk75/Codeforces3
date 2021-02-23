@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    int t,n,k,i,j,a,b,c,d,e,f,g,h;
+    cin>>t;
+    for(j=0;j<t;j++)
+    {
+        cin>>n>>k;
+        if(k>=n)
+        {
+            cout<<1<<endl;
+        }
+        else{
+            if(n%k==0)
+            {
+                cout<<n/k<<endl;
+            }
+            else{
+                a=sqrt(n);
+                if(k<=a)
+                {
+                    for(i=k;i>=1;i--)
+                    {
+                        if(n%i==0)
+                        {
+                            cout<<n/i<<endl;
+                            break;
+                        }
+                    }
+                }
+                else{
+                    for(i=1;i<=a;i++)
+                    {
+                        if(n%i==0)
+                        {
+                            b=i;
+                            c=n/i;
+                            if(c>k)
+                            {
+                                c=1;
+                            }
+                            else{
+                                cout<<i<<endl;
+                                break;
+                            }
+                        }
+                    }
+                    if(c==1)
+                    {
+                        cout<<n/b<<endl;
+                    }
+                }
+            }
+        }
+    }
+}

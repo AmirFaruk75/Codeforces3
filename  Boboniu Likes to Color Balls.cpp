@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    long long int t,r,g,b,w,a=0,c=0,d,e,f,h,i,j;
+    cin>>t;
+    while(t--)
+    {
+        cin>>r>>g>>b>>w;
+        if(r==0 || g==0 || b==0)
+        {
+            if(r%2!=0)
+            {
+                a++;
+            }
+            if(g%2!=0)
+            {
+                a++;
+            }
+            if(b%2!=0)
+            {
+                a++;
+            }
+            if(w%2!=0)
+            {
+                a++;
+            }
+            if(a>1)
+            {
+                cout<<"NO"<<endl;
+            }
+            else{
+                cout<<"YES"<<endl;
+            }
+        }
+        else{
+            if(r%2!=0)
+            {
+                c++;
+            }
+            if(g%2!=0)
+            {
+                c++;
+            }
+            if(b%2!=0)
+            {
+                c++;
+            }
+            if(w%2!=0)
+            {
+                c++;
+            }
+            if(c==2)
+            {
+                cout<<"NO"<<endl;
+            }
+            else{
+                cout<<"YES"<<endl;
+            }
+        }
+        a=0;c=0;
+    }
+}

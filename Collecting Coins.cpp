@@ -1,0 +1,74 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,a,b,c,n,d,e,f,i,k,l,m;
+    cin>>t;
+    for(i=0;i<t;i++)
+    {
+        cin>>a>>b>>c>>n;
+        if(a>=b && a>=c)
+        {
+            d=a-b;
+            e=a-c;
+            f=d+e;
+            k=n-f;
+            if(k<0)
+            {
+                cout<<"NO"<<endl;
+                continue;
+            }
+            else{
+                if(k%3==0)
+                {
+                    cout<<"YES"<<endl;
+                }
+                else{
+                    cout<<"NO"<<endl;
+                }
+            }
+        }
+        else if(b>=a && b>=c)
+        {
+            d=b-a;
+            e=b-c;
+            f=d+e;
+            k=n-f;
+            if(k<0)
+            {
+                cout<<"NO"<<endl;
+                continue;
+            }
+            else{
+                if(k%3==0)
+                {
+                    cout<<"YES"<<endl;
+                }
+                else{
+                    cout<<"NO"<<endl;
+                }
+            }
+        }
+         else
+        {
+            d=c-a;
+            e=c-b;
+            f=d+e;
+            k=n-f;
+            if(k<0)
+            {
+                cout<<"NO"<<endl;
+                continue;
+            }
+            else{
+                if(k%3==0)
+                {
+                    cout<<"YES"<<endl;
+                }
+                else{
+                    cout<<"NO"<<endl;
+                }
+            }
+        }
+    }
+}

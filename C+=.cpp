@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,a,b,n,i,j,c=0,d,e,f,g,h;
+    cin>>t;
+    for(i=0;i<t;i++)
+    {
+        cin>>a>>b>>n;
+        if(a>=b)
+        {
+            for(j=1;;j++)
+            {
+                if(c==0)
+                {
+                    b=b+a;
+                    if(b>n)
+                    {
+                        cout<<j<<endl;
+                        break;
+                    }
+                    c=1;
+                }
+                else{
+                    a=a+b;
+                    if(a>n)
+                    {
+                        cout<<j<<endl;
+                        break;
+                    }
+                    c=0;
+                }
+            }
+        }
+        else{
+            for(j=1;;j++)
+            {
+                if(c==0)
+                {
+                    a=a+b;
+                    if(a>n)
+                    {
+                        cout<<j<<endl;
+                        break;
+                    }
+                    c=1;
+                }
+                else{
+                    b=b+a;
+                    if(b>n)
+                    {
+                        cout<<j<<endl;
+                        break;
+                    }
+                    c=0;
+                }
+            }
+        }
+        if(c==1)
+        {
+            c=0;
+        }
+    }
+}

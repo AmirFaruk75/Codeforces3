@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,a[10000],i,j,b=0,c=0,d,e,f,g,h,sum=0;
+    cin>>t;
+    for(i=0;i<t;i++)
+    {
+        cin>>n;
+        for(j=0;j<n;j++)
+        {
+            cin>>a[j];
+            if(a[j]%2!=0)
+            {
+                b++;
+            }
+            else{
+                c++;
+            }
+        }
+        for(j=0;j<n;j++)
+        {
+            sum=sum+a[j];
+        }
+        if(b==0 || c==0)
+        {
+            if(sum%2==0)
+            {
+                cout<<"NO"<<endl;
+                sum=0;
+                b=0;
+                c=0;
+                continue;
+            }
+            else{
+                cout<<"YES"<<endl;
+                sum=0;
+                b=0;
+                c=0;
+                continue;
+            }
+        }
+        if(sum%2!=0)
+        {
+            cout<<"YES"<<endl;
+        }
+        else{
+            if(b==0)
+            {
+                cout<<"NO"<<endl;
+            }
+            else{
+                cout<<"YES"<<endl;
+            }
+        }
+        b=0;
+        sum=0;
+        c=0;
+    }
+}

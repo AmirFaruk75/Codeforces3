@@ -1,0 +1,88 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    long long int t,n,k,a,b,c=0,i,j,d,rem;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>k;
+        if(n==3)
+        {
+            if(k%n==1)
+            {
+                cout<<1<<endl;
+            }
+            else if(k%n==2)
+            {
+                cout<<3<<endl;
+            }
+            else{
+                cout<<2<<endl;
+            }
+            continue;
+        }
+        a=n/2;
+        d=k/n;
+        if((k%n)==0)
+        {
+            d=d-1;
+        }
+        rem=d%a;
+        b=(d*n)+1;
+        int f=(d*2)+1;
+        for(i=f;i<=n;i++)
+        {
+            if((b-1)%a==0)
+            {
+                i=i+1;
+            }
+            else{
+                i=i;
+            }
+            if(i==n)
+            {
+                i=0;
+            }
+            if(b!=k)
+            {
+                b++;
+            }
+            else{
+                break;
+            }
+        }
+        if(k<=n)
+        {
+            for(i=1;i<=k;i++)
+            {
+                if(i==1)
+                {
+                    continue;
+                }
+                if((i-1)%a==0)
+                {
+                    c++;
+                }
+            }
+
+            if(c==2)
+            {
+                cout<<2<<endl;
+            }
+            else{
+                cout<<k+c<<endl;
+            }
+            c=0;
+            continue;
+        }
+        if(i==0)
+        {
+            cout<<n<<endl;
+        }
+        else{
+            cout<<i<<endl;
+        }
+    }
+}
